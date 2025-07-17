@@ -125,12 +125,36 @@ export default function PickerDashboardLayout({
                 <Button variant="ghost" size="icon" className="rounded-full">
                   <Avatar className="h-8 w-8">
                     <AvatarImage src="/placeholder.svg?height=32&width=32" alt="Waste Picker" />
-                    <AvatarFallback>WP</AvatarFallback>
+                    <AvatarFallback>MG</AvatarFallback>
                   </Avatar>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuLabel>Waste Picker Account</DropdownMenuLabel>
+              <DropdownMenuContent align="end" className="w-56">
+                <div className="flex flex-col space-y-1 p-2">
+                  <p className="text-sm font-medium leading-none">Maria Garcia</p>
+                  <p className="text-xs leading-none text-muted-foreground">maria@example.com</p>
+                </div>
+                <DropdownMenuSeparator />
+                <div className="p-2">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                    <span className="text-xs font-medium">Waste Picker</span>
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    <div className="flex justify-between">
+                      <span>Today's Collections:</span>
+                      <span className="font-medium">8</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Earnings:</span>
+                      <span className="font-medium">$160</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Efficiency:</span>
+                      <span className="font-medium">94%</span>
+                    </div>
+                  </div>
+                </div>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild>
                   <Link href="/picker-dashboard/profile">Profile</Link>

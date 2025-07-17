@@ -135,12 +135,73 @@ export default function DashboardLayout({
                 <Button variant="ghost" size="icon" className="rounded-full">
                   <Avatar className="h-8 w-8">
                     <AvatarImage src="/placeholder.svg?height=32&width=32" alt="User" />
-                    <AvatarFallback>JD</AvatarFallback>
+                    <AvatarFallback>
+                      {pathname.includes('/picker-dashboard') ? 'WP' : 
+                       pathname.includes('/admin') ? 'AD' : 'JD'}
+                    </AvatarFallback>
                   </Avatar>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuContent align="end" className="w-56">
+                <div className="flex flex-col space-y-1 p-2">
+                  <p className="text-sm font-medium leading-none">
+                    {pathname.includes('/picker-dashboard') ? 'Maria Garcia' : 
+                     pathname.includes('/admin') ? 'System Administrator' : 'John Smith'}
+                  </p>
+                  <p className="text-xs leading-none text-muted-foreground">
+                    {pathname.includes('/picker-dashboard') ? 'maria@example.com' : 
+                     pathname.includes('/admin') ? 'admin@example.com' : 'john@example.com'}
+                  </p>
+                </div>
+                <DropdownMenuSeparator />
+                <div className="p-2">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className={`w-2 h-2 rounded-full ${
+                      pathname.includes('/picker-dashboard') ? 'bg-green-500' : 
+                      pathname.includes('/admin') ? 'bg-blue-500' : 'bg-gray-500'
+                    }`}></div>
+                    <span className="text-xs font-medium">
+                      {pathname.includes('/picker-dashboard') ? 'Waste Picker' : 
+                       pathname.includes('/admin') ? 'System Administrator' : 'Regular User'}
+                    </span>
+                  </div>
+                  {pathname.includes('/picker-dashboard') && (
+                    <div className="text-xs text-muted-foreground">
+                      <div className="flex justify-between">
+                        <span>Today's Collections:</span>
+                        <span className="font-medium">8</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Earnings:</span>
+                        <span className="font-medium">$160</span>
+                      </div>
+                    </div>
+                  )}
+                  {pathname.includes('/admin') && (
+                    <div className="text-xs text-muted-foreground">
+                      <div className="flex justify-between">
+                        <span>Active Users:</span>
+                        <span className="font-medium">1,248</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>System Status:</span>
+                        <span className="font-medium text-green-600">Online</span>
+                      </div>
+                    </div>
+                  )}
+                  {!pathname.includes('/picker-dashboard') && !pathname.includes('/admin') && (
+                    <div className="text-xs text-muted-foreground">
+                      <div className="flex justify-between">
+                        <span>Recycling Points:</span>
+                        <span className="font-medium">245</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Collections:</span>
+                        <span className="font-medium">15</span>
+                      </div>
+                    </div>
+                  )}
+                </div>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild>
                   <Link href="/dashboard/profile">Profile</Link>
