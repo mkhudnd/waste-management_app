@@ -148,7 +148,7 @@ This is currently a personal project under development. Contributions, suggestio
 
 ## 📧 Contact
 
-**Developer**: mkhudnd  
+**Developer**: mkhudnd @ mkhundhlovu@gmail.com
 **Repository**: [https://github.com/mkhudnd/waste-management_app](https://github.com/mkhudnd/waste-management_app)
 
 ---
